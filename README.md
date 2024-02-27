@@ -1,212 +1,341 @@
-![](https://i.imgur.com/xG74tOh.png)
+# Academy Pay
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Kauanedev/academy-pay?color=%2304D361">
+  
+  <a href="https://github.com/Kauanedev/din-din-project/commits/main">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Kauanedev/academy-pay">
+  </a>
+</p>
 
-# Desafio Final Módulo 6 - BACKEND
+<p align="center">
+  <img alt="Postgresql" src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white">
+    <img alt="Javascript" src="https://img.shields.io/badge/Javascript-0d1b2a?style=for-the-badge&logo=javascript">
+    <img alt="ExpressJs" src="https://img.shields.io/badge/express-ffd000?style=for-the-badge&logo=express">
+<img alt="React" src="https://img.shields.io/badge/React-005CFE?style=for-the-badge&logo=react">
+</p>
 
-Este repositório deverá servir de base para ser realizado o fork para desenvolvimento da parte de **BACKEND** do desafio.
+<h1 align="center">
+    <img alt="LOGIN PAGE" title="#LOGIN PAGE" src="https://github.com/Kauanedev/academy-pay/raw/main/assets/login-page.png" />
+</h1>
 
-A URL deste repositório deverá ser entregue na plataforma de alunos da Cubos Academy na página da parte de BACKEND do desafio.
 
-A versão final do código de cada sprint deverá estar na branch principal do repositório e sim, a cada semana acumulará as alterações das sprints, portanto a segunda sobrescrevendo a primeira e assim por diante.
+<h4 align="center"> 
+💸 Academy Pay 💸
+</h4>
 
+<p align="center">
+<a href="#about">About</a> •
+<a href="#functionalities">Functionalities</a> •
+<a href="#run">Run the project</a> •
+<a href="#endpoints">API Endpoints</a> •
+<a href="tecnologies">Tecnolgies<a/> •
+<a href="#colab">Collaborators</a> •
+<a href="#deploy">Deployed version</a> •
+<a href="#license">License</a>
+</p>
+
+## 💻 About the project
+<p id="about">
+Academy Pay is a solution designed to meet the financial management needs of commercial establishments. It provides a safe and efficient platform for registering customers and organizing the accounts associated with each of them. Owners find this tool an effective resource for transparent management and detailed monitoring of customer transactions.
+</p>
+
+
+
+<p id="functionalities">
+
+ ## ⚙️ Functionalities
+</p>
+
+
+- Register user
+- Register client
+- Register client charges
+- Validation system for dates and due dates 
+- Update user and client records
+- General financial tracking
+
+### Web
+  
+  <h1 align="center">
+   <img alt="Register Client" src="https://github.com/LuizDevExe/Academy-pay-back-end/assets/109562299/019fc61f-87fd-4a0d-8511-90fd755a2b71" />
+</h1>
+  <h1 align="center">
+   <img alt="Register Chrges" src="https://github.com/LuizDevExe/Academy-pay-back-end/assets/109562299/4289edca-a4e9-4dc4-bc5b-01254b121f7b" />
+</h1>
+<h1 align="center">
+    <img alt="Billing Page" src="https://github.com/LuizDevExe/Academy-pay-back-end/assets/109562299/faac500f-1821-4355-bf99-907c9c86da94" />
+</h1>
+
+<h1 align="center">
+    <img alt="Home Page" src="https://github.com/LuizDevExe/Academy-pay-back-end/assets/109562299/a8d0a556-67b9-4087-941b-fc9d25a816fb" />
+</h1>
+
+
+<p id="run">
+  
+## 🏃‍♀️ Run the project
+</p>
+
+### 🎲 Run Backend
+💡 try the deployed version: https://backend-devastados.vercel.app/
+```bash
+
+ 
+# Clone this repository:
+$ git clone git@github.com:Kauanedev/academy-pay.git
+
+# Go to server folder:
+$ cd server
+
+# Install dependencies:
+$ npm install
+
+# Run the app in the development mode
+$ npm run dev
+
+# Server will start on port:3000
+
+```
+
+### 🧭 Run Frontend
+💡 try the deployed version: https://desafio-final-front-dds-t12-omega.vercel.app/
+```bash
+
+# Clone this repository:
+$ git clone git@github.com:Kauanedev/academy-pay.git
+
+# Go to frontend folder:
+$ cd frontend
+
+# Install dependencies:
+$ npm install
+
+# Run the app in the development mode:
+$ npm run start
+
+# Server will start on port:3000 - Open ~ http://localhost:3000 ~ to view it in your browser.
+
+```
+
+<p id="endpoints">
+  
+## 📍API Endpoints
+</p>    
+
+| route               | description                                          
+|----------------------|-----------------------------------------------------
+| <kbd>POST /registerUser</kbd>     | See [request details](#post-register-user)
+| <kbd>POST /login</kbd>     |  See [request details](#post-login)
+| <kbd></kbd>     | 
+| <kbd>PUT /editUser/:idUser</kbd>     |See [request details](#put-edit-user)
+| <kbd>GET /getUser/:idUser</kbd>     | Returns specific user
+| <kbd>POST /registerClient/:idUser</kbd>     | See [request details](#post-register-client)
+| <kbd>GET /listClients/:idUser</kbd>     | Returns Clients
+| <kbd>GET /getClient/:idUser</kbd>     | Returns specific client
+| <kbd>PUT /editClient/:idUser</kbd>     | See [request details](#put-edit-client)
+| <kbd></kbd>     | 
+| <kbd>POST /registerBilling/:idUser/:idClient</kbd>     | See [request details](#post-register-billing) 
+| <kbd>PUT /editBilling/:idBill</kbd>     | See [request details](#put-edit-billing) 
+| <kbd>GET /listBills/:idUser</kbd>     | Returns bills from specific user
+| <kbd>GET /getBill/:idBill</kbd>     | Returns specific bill 
+| <kbd>GET /listClientBills/:idUser/:idClient</kbd>     | Returns bills from specific client
+| <kbd>DELETE /deleteBill/:idBill</kbd>     | Deletes specif bill
+| <kbd></kbd>     | 
+| <kbd>GET /homepage/:idUser</kbd>     | Returns all charges from clients of specific user 
+
+<h3 id="post-register-user">POST /registerUser</h3>
+
+**REQUEST**  
+```json
+{
+  "name":"User Name",
+  "email":"test@gmail.com",
+  "password": "password"
+}
+```
+
+<h3 id="post-register-user">POST /login</h3>
+
+**REQUEST**  
+```json
+{
+  "email":"teste@gmail.com",
+  "password": "password"
+}
+```
+
+**RESPONSE**
+```json
+{
+	"user": {
+		"id": 25,
+		"name": "User Name",
+		"cpf": null,
+		"email": "test@gmail.com",
+		"phone": null
+	},
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjUsImlhdCI6MTcwODk4MDA5MywiZXhwIjoxNzA5MDA4ODkzfQ.bD47unSSmt8XhtzpmCc9YykGRjB7MvMFh6g4Jvz0OLg"
+}
+```
+
+<h3 id="put-edit-user">PUT /editUser/:idUser</h3>
+
+**REQUEST**  
+```json
+{
+  "name":"User Name",
+  "email":"test@gmail.com",
+  "password": "password",
+	"cpf":"",
+	"phone":""
+}
+```
+
+**RESPONSE**
+```json
+{
+	"message": "Dados alterados com sucesso!",
+	"changePassword": true,
+	"data": [
+		{
+			"name": "User Name",
+			"email": "test@gmail.com",
+			"cpf": "",
+			"phone": ""
+		}
+	]
+}
+```
+<h3 id="post-register-client">POST /registerClient/:idUser</h3>
+
+**REQUEST**  
+```json
+{
+  "name":"client",
+  "email":"client@gmail.com",
+  "phone": "14122248547",
+  "cpf": "462.020.777-27",
+	"state":"RJ"
+}
+```
+<h3 id="put-edit-client">PUT /editClient/:idUser</h3>
+
+**REQUEST**  
+```json
+{
+	"id":"265962",
+	"name": "client",
+	"email": "client59.2@gmail.com",
+	"cpf": "52652352313",
+	"phone": "59531248129",
+	"zip_code": null,
+	"address": null,
+	"complementary_address": null,
+	"neighborhood": null,
+	"city": "Rio de Janeiro",
+  "state": "RJ"
+}
+```
+
+<h3 id="post-register-billing">POST /registerBilling/:idUser/:idClient</h3>
+
+**REQUEST**  
+```json
+{
+  "status":"PENDENTE",
+  "value":53000,
+  "due_date":"2023-12-02"
+}
+
+```
+<h3 id="put-edit-billing">PUT /editBilling/:idBill</h3>
+
+**REQUEST**  
+```json
+{
+	"name":"client",
+	"value":"15590",
+	"due_date":"2023-11-24",
+	"status":"PAGO",
+	"payment_date":"2023-11-26"
+}
+```
+
+<p id="tecnologies">
+  
+  ## 🛠 Tecnologies 
+</p>
+
+#### **Website**  ([React](https://reactjs.org/))
+
+-   **[Chakra UI](https://chakra-ui.com/)**
+-   **[Axios](https://axios-http.com/ptbr/docs/intro)**
+-   **[Framer Motion](https://www.framer.com/motion/)**
+-   **[Crypto JS](https://github.com/brix/crypto-js)**
+-   **[React Router Dom](https://reactrouter.com/en/main)**
+
+#### **Server**  ([NodeJS](https://nodejs.org/en/))
+
+-   **[Axios](https://axios-http.com/ptbr/docs/intro)**
+-   **[Bcript](https://github.com/kelektiv/node.bcrypt.js#readme)**
+-   **[CORS](https://expressjs.com/en/resources/middleware/cors.html)**
+-   **[dotENV](https://github.com/motdotla/dotenv)**
+-   **[Express](https://expressjs.com/)**
+-   **[KnexJS](http://knexjs.org/)**
+-   **[Joi](https://joi.dev/)**
+-   **[JSON webToken](https://jwt.io/)**
+-   **[Knex](https://knexjs.org/)**
+
+#### **Utilities** 
+
+-   Figma:  **[Figma](https://www.figma.com/)**  →  **[Prototype](https://www.figma.com/file/EsX2ltIJ6gSGFzXXCU1pQH/M05-SPRINT-03?type=design&node-id=410-47347&mode=design&t=M4n4IHXTH8lNe2cO-0)**
+-   API:  **[API](https://backend-devastados.vercel.app/)**
+-   Source-Code Editor:  **[Visual Studio Code](https://code.visualstudio.com/)** 
+-   Commit Conventional:  **[Commitlint](https://github.com/conventional-changelog/commitlint)**
+-   API Client:  **[Insomnia](https://insomnia.rest/)**
+-   Icons:  **[Chakra Ui Icons](https://chakra-ui.com/docs/components/icon)**
+-   Fonts:  **[Nunito](https://fonts.google.com/specimen/Nunito)**,  **[Montserrat](https://fonts.google.com/specimen/Montserrat?query=montse)**
 ---
 
-No fork de vocês, favor alterar este README para adicionar os links correspondentes para os seguintes itens:
 
-**Repositório de Backend**: https://github.com/LuizDevExe/desafio-final-back-dds-t12
+<p id="colab">
+ 
+  ## 🤝 Collaborators
+</p>
+This is the dream team that made it all happen: 💜 
 
-**Repositório de Frontend**: https://github.com/LuizDevExe/desafio-final-front-dds-t12
+<table>
+  <tr>
+<td align="center"><a href="https://github.com/Kauanedev"><img style="border-radius: 50%;" src="https://media.licdn.com/dms/image/D4E03AQE8gv40ZhO8ww/profile-displayphoto-shrink_200_200/0/1680386723608?e=1714003200&v=beta&t=sNOFcWeNpaJMxV7lMfxfHDaWzAVxz0GfprxS_I0i6DI" width="100px;" alt=""/><br /><sub><b>Kauane Santos</b></sub></a><br /><a href="https://github.com/Kauanedev" >💫</a></td>
 
-**URL da aplicação funcionando**: https://desafio-final-front-dds-t12-omega.vercel.app/
+<td align="center"><a href="https://github.com/SchneiderMurilo"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/129790001?v=4" width="100px;" alt=""/><br /><sub><b>Murilo Schneider</b></sub></a><br /><a href="https://github.com/SchneiderMurilo" >👨‍💻</a></td>
+    
+<td align="center"><a href="https://github.com/LuizDevExe"><img style="border-radius: 50%;" src="https://media.licdn.com/dms/image/D4D03AQErTbo1oWSLaA/profile-displayphoto-shrink_800_800/0/1702061663832?e=1714003200&v=beta&t=yevdEw4MHro-1zXXbV9itcVyunO3Zni0_tCTS4LN848" width="100px;" alt=""/><br/><sub><b>Luiz Pedro</b></sub></a><br/> <a href="https://github.com/LuizDevExe">👨‍💻</a></td>
 
----
+    
+<td align="center"><a href="https://github.com/JefersonVM"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/62728162?v=4" width="100px;" alt=""/><br /><sub><b>Jeferson Vieira</b></sub></a><br /><a href="https://github.com/JefersonVM" >👨‍💻</a></td>
 
-E os itens abaixo, que deverão ser preenchidos apenas após a finalização de todas as sprints do projeto: 
+<td align="center"><a href="https://github.com/gabrielnfarias"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/105251567?v=4" width="100px;" alt=""/><br /><sub><b>Gabriel Navarro Farias</b></sub></a><br /><a href="https://github.com/gabrielnfarias" >👨‍💻</a></td>
 
-**Pull Request (PR) de Backend**: 
+  </tr>
+</table>
 
-**Pull Request (PR) de Frontend**: 
+<p id="deploy">
 
-Estes Pull Requests (PRs) deverão ser criados a partir da branch principal do fork correspondente de vocês daquela stack tendo como destino o repositório base da stack do desafio.
+## 🚀 Deployed Application
+<p/>
 
-Ou seja, o Pull Request de **BACKEND** deverá ser criado a partir do fork de vocês desse repositório aqui, com destino a este repositório aqui.
+  Visit our project and try it for yourself:
+</p>
 
-E portanto o Pull Request de **FRONTEND** deverá ser criado a partir do fork de vocês do repositório base de FRONTEND desse desafio, com destino ao [repositório base de FRONTEND desse desafio](https://github.com/cubos-academy/desafio-final-front-dds-t12).
+🖥️[Frontend](https://desafio-final-front-dds-t12-omega.vercel.app/sign-in)
+🎲[Backend](https://backend-devastados.vercel.app/)	
 
-<b>[Figma Desafio M05 - Sprint 1](https://www.figma.com/file/Gpl5YlCj17jJ99dT3LqV6U/M05-SPRINT-01?node-id=410%3A47347)</b>
+<p id="license">
+	
+## 📝 Licese
+</p>
 
-<br>
-<details>
-<summary>1ª Sprint</summary>
-<br>
+This project is under license [MIT](./LICENSE).
 
-<details>
-<summary><b>[Usuário] Cadastro do usuário</b></summary>
-<br>
-
-### `Na posição de usuário do sistema, desejo cadastrar meus dados, afim de ter acesso ao sistema.` 
-___________________________________________________________________________________
-- <b>Critérios de aceite</b>
-  - O cadastro deverá funcionar em formulário web que funcione em um navegador padrão
-  - Para acessar este formulário de cadastro não deverá ser exigida autenticação
-  - Os dados do cadastro deverão ser persistidos de maneira que possam ser consultados em qualquer momento no futuro até que sejam excluídos.
-  - O usuário poderá visualizar sua senha enquanto a escreve (Ex: Material UI Input Adornment https://v4.mui.com/pt/api/input-adornment/)
-  - A senha do usuário deverá ser persistida utilizando algum algoritmo de criptografia confiável
-___________________________________________________________________________________
-- Campos necessários para o cadastro inicial (obrigatórios):
-   - Nome do usuário (obrigatório)
-   - Email (obrigatório)
-   - Senha (obrigatório)
-
-- Deverão ser informadas mensagens de erro em casos de:
-
-  - Campos obrigatórios em branco
-  - E-mail informado já existir cadastrado
-  - Após realizado o cadastro com sucesso o usuário deverá receber uma mensagem de confirmação e um botão para ser redirecionado para a página de Login.
-
-</details>
-
-<details>
-<summary><b>[Usuário] Login do usuário</b></summary>
-
-### `Na posição de usuário do sistema, devo ser capaz de realizar login no Dashboard, afim de acessar o sistema.`
-___________________________________________________________________________________
-- <b>Critérios de aceite</b>
-  - O login do usuário deverá ser realizado em formulário web funcionando em navegador padrão
-- Campos obrigatórios:
-  - E-mail
-  - Senha
-  - Deverá ser possível informar os dados de acesso (e-mail e senha) e então clicar em botão para realização do login
-
-- Deverão ser informadas mensagens de erro em casos de:
-
-  - Campos obrigatórios em branco
-  - E-mail não existe no cadastro
-  - Senha incorreta para o e-mail
-  - Criação de token de autenticação após validação dos dados (credenciais) de acesso (e-mail e senha).
-
-- Após realização de login com sucesso, deverá ser retornado ao navegador o token de autenticação de forma que possa ser utilizado em outras funcionalidades que exigem autenticação. O usuário deverá ser redirecionado para a home do sistema
-</details>
-
-<details>
-<summary><b>[Dashboard] Home e Menu</b></summary>
-
-### `Na posição de usuário do sistema, desejo visualizar uma tela inicial, afim de poder navegar pelo sistema através do menu.`
-___________________________________________________________________________________
-- <b>Critérios de aceite</b>
-  - A página deverá funcionar em um navegador web padrão.
-  - Apenas usuários autenticados deverão conseguir acessar esta página
-
-- Esta tela deverá ter uma imagem padrão de usuário e o primeiro nome do usuário no canto superior direito, que ao clicar, abrirá um menu com dois botões: 
-
-  - O primeiro é o "Editar", que abrirá um modal de atualização do cadastro do usuário logado.
-  - O segundo é o botão "Sair", que irá deslogar o usuário do sistema
-
-- Deverá existir um menu lateral que permitirá o usuário navegar pelos módulos do sistema, contendo os links:
-
-  - Home
-  - Clientes
-  - Cobranças
-
-- Esta tela deverá ter 8 cards com as seguintes informações:
-
-   Resumo do Valor Total das Cobranças
-  - Pagas
-  - Vencidas
-  - Previstas
-
-  - Cobranças Vencidas
-  - Cobranças Previstas
-  - Cobranças Pagas
-
-  - Clientes Inadimplentes
-  - Clientes Em dia
-
-</details>
-
-<details>
-<summary><b>[Usuário] Edição do usuário logado</b></summary>
-
-#### `Na posição de usuário dos sistema, desejo editar meus dados de usuário, quando logado no sistema.`
-
-- <b>Critérios de aceite</b>
-  - Através de um clique no perfil da Dashboard serão abertos dois botões:
-    - Editar
-    - Sair	
-  - Ao clicar em "Editar" o formulário de edição dos dados do usuário deverá ser aberto.
-  - A edição deverá funcionar em formulário web que funcione em um navegador padrão
-  - Ao abrir o formulário, os  dados do usuário logado deverão ser carregados nos respectivos campos
-  - Para acessar este formulário de cadastro será exigido autenticação.
- - Os dados da atualização deverão ser persistidos de maneira que possam ser consultados em qualquer momento no futuro até que sejam excluídos.
-
-- O usuário poderá ou não visualizar sua senha enquanto a escreve (Ex: Material UI Input Adornment)
-  - Caso seja informado uma nova senha do usuário, a mesma deverá ser persistida utilizando algum algoritmo de criptografia confiável
-  - O usuário poderá atualizar os respectivos dados a seguir :
-
-    - Nome do usuário (obrigatório)
-    - E-mail (obrigatório)
-    - Senha (obrigatório - apenas se for alterar a senha)
-    - CPF
-    - Telefone
-
-- Deverão ser informadas mensagens de erro em casos de:
-
-  - Campos obrigatórios passados em branco
-  - E-mail informado for diferente do usuário logado e já existir cadastrado para outro usuário
-
- - Após realizado a atualização com sucesso o usuário deverá receber uma mensagem de confirmação
-</details>
-
-<details>
-<summary><b>[Cliente] Cadastro do cliente</b></summary>
-
-#### `Na posição de usuário do sistema, desejo cadastrar clientes, afim de acessar suas informações no futuro.`
-
-- <b>Critérios de aceite</b>
-  - O cadastro deverá funcionar em formulário web que funcione em um navegador padrão
-  - Para acessar este formulário de cadastro deverá ser exigida autenticação
-  - Os dados do cadastro deverão ser persistidos de maneira que possam ser consultados em qualquer momento no futuro até que sejam excluídos.
-
-  - Campos necessários para o cadastro (<b>*</b> obrigatórios):
-    - Nome do usuário (<b>*</b>)
-    - Email (<b>*</b>)
-    - Cpf (<b>*</b>)
-    - Telefone (<b>*</b>)
-    - Cep
-    - Logradouro
-    - Complemento
-    - Bairro
-    - Cidade
-    - Estado
-
-  - Opcionalmente, poderá ter a busca do endereço ao digitar o CEP utilizando a api do ViaCEP
-
-  - Deverão ser informadas mensagens de erro em casos de:
-    - Campos obrigatórios em branco
-    - E-mail informado já existir cadastrado
-    - Após realizado o cadastro com sucesso o usuário deverá receber uma mensagem de confirmação.
-
-
-</details>
-
-
-<details>
-<summary><b>[Dashboard] Configuração do Deploy</b></summary>
-
-#### `Na posição de usuário do sistema, devo ser capaz de acessar o sistema através da internet, afim de usar o sistema em qualquer dispositivo com acesso a internet.`
-
-- <b>Critérios de aceite</b>
-
-  - O frontend poderá ser hospedado na <b>Netlify</b>
-  - O backend e banco de dados poderá ser hospedado na <b>Heroku</b>
-  - O frontend hospedado deverá ser <b>integrado</b> ao backend também hospedado
-
-</details>
-
----
-## <b>ATENÇÃO</b> É indispensável fazer deploy do projeto e disponibilizar a URL para o cliente realizar os testes. O não cumprimento desta etapa será considerada uma falha grave.
-
-</details>
-
-</details>
-
----
+Made with 💓 by Kauane Santos 👋 [Contact me!](https://www.linkedin.com/in/kauane-santos-dev/)
